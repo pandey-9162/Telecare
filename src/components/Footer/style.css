@@ -1,0 +1,18 @@
+.social{
+    display:flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+.footer-main{
+    background-color:#0b9c86;
+}
+span{
+    text-decoration:none;
+}
+.social-icon{
+    font-size: 25px;
+    padding:auto;
+}
+.text-reset{
+    text-decoration:none;
+}

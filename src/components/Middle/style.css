@@ -1,0 +1,68 @@
+.main {
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.div1{
+    background-color:#a5b1c4;
+    width: 350px; 
+    height: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-size: cover; 
+    background-position: center; 
+}
+h2, h3{
+    text-align: center;
+}
+h3{
+    font-family:Cursive;
+}
+p{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+span{
+    text-decoration: underline; 
+}
+.span1{
+    color: #18225e;
+    font-weight: bold;
+}
+.span2{
+    color: #bade1b;
+    font-weight: bold;
+}
+.span3{
+    color: #14c9c3;
+    font-weight: bold;
+}
+.span4{
+    color: #de521b;
+    font-weight: bold;
+}
+.abt-individual{
+    font-size: 22px;
+}
+.card-img{
+    height:250px;
+}
+
+.text-center{
+    margin-top : 100px;
+}
+.card-title2 {
+    font-size: 70px;
+    font-weight: bold;
+    color:#351F65;
+    font-family: ui-sans-serif;
+}
+.card-text{
+    font-size: 30px;
+    font-family:serif;
+}
+.card-body{
+    background-color:#cbbceb;
+}
