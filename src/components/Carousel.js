@@ -1,10 +1,9 @@
 import React from 'react';
 import NavBar from './NavBar/Navbar';
-import About from './About/About';
-import Middle from './Middle/Middle';
-import maxresdefault from '../assets/maxresdefault1.jpg';
-
+import cover from "../assets/cover1.jpg";
+import { Link } from 'react-router-dom';
 import "./login.css"
+
 export default function Carousel() {
   return (
     <div id="main" className="main-div" data-bs-ride="carousel">
@@ -15,17 +14,20 @@ export default function Carousel() {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src={maxresdefault} class="d-block w-100" alt=""/>
+      <img src={cover} class="d-block w-100" alt=""/>
       <div class="carousel-caption custom-caption">
-        <h1 className='text-dark' >Hello users...</h1>
-        <p className='text-dark fs-1'>Healthier should always be <br/> within reach.</p>
-        <span className='btn btn-outline-danger fs-2 px-4 py-2'>Care now</span>
+        <h1 className='carousel-heading' >Your Health, Our Priority</h1>
+        <p className='fs-3'>Access quality healthcare anytime, anywhere</p>
+        <Link to="/consult" className="">
+        <button className='carousel-button'> Get Started!
+        </button>
+        </Link>
       </div>
-    </div>
+    </div> 
   </div>
 </div>
-      <Middle/>
-      <About/>
+      {/* <About/> */}
     </div>
   );
 }
+

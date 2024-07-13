@@ -1,33 +1,35 @@
 import './App.css';
 import React from "react";
+import 'react-toastify/dist/ReactToastify.css';
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
-import Middle from './components/Middle/Middle';
 import Home from './components/Home';
-import Navbar from './components/NavBar/Navbar'; 
 import Signup from './components/Signup/Signup';
-import Login from './components/Login';
-import Appointment from './components/Appointment/Appointment';
+import Login from './components/Signup/Login';
+import Consult from './components/Consult/Consult';
 import About from './components/About/About';
-import Book from './components/Book_Appointment/Book';
-
+import DoctorList from './components/DoctorList/Doctorlist';
+import MyAppointment from './components/MyAppointment/Myappointment';
+import Myprofile from "./components/Myprofile/Myprofile";
+import Credit from './components/Credit/Credit';
 function App() {
   return (
-  <Router>
+  
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route exact path='/createuser' element={<Signup/>}/>
-      <Route exact path='/book-appointment' element={<Appointment/>}/> 
+      <Route exact path='/consult' element={<Consult/>}/> 
       <Route exact path='/login' element={<Login/>}/>
       <Route exact path='/register' element={<Signup/>}/>
       <Route exact path='/about' element={<About/>}/>
-      <Route exact path='/book-appointment/book' element={<Book/>}/>
+      <Route exact path='/book-appointment' element={<DoctorList/>}/>
+      <Route exact path='/mycredit' element={<Credit/>}/>
+      <Route exact path='/myprofile' element={<Myprofile/>}/>
+      <Route exact path='/my-appointment' element={<MyAppointment/>}/>
     </Routes>
-  </Router>
+
   );
 }
 

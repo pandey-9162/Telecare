@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px; 
+  flex :50%;
+  background-color: #fff;
+}
+
+.text {
+  max-width: 50%;
+}
+
+.text h1 {
+  margin: 0 0 20px;
+  color: ;
+}
+
+.text p {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.doctor-info {
+  display: flex;
+  align-items: center;
+}
+
+.doctor-img {
+  border-radius: 50%;
+  /* margin-right: 10px; */
+  width: 50px;
+  height: 50px;
+}
+
+.online-dot {
+  color: green;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.button-group .btn {
+  margin-right: 10px;
+}
+
+
+.features {
+  margin-top: 20px;
+  font-size: 10px;
+}
+
+.features p {
+  margin: 5px 0;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    max-width: 100%;
+  }
+
+  .doctor-info {
+    justify-content: center;
+  }
+} 

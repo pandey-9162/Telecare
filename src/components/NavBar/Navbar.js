@@ -1,44 +1,53 @@
-import React from 'react';
-import { Link ,useLocation } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
-
+import { AuthContext } from '../../AuthContext';
+import UserDropdown from '../UserDropdown/UserDropdown';
 
 function NavBar() {
-    const [isHome, setIsHome] = React.useState(false);
+    const { user, logout } = useContext(AuthContext);
+    const [isHome, setIsHome] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
-    React.useEffect(() => {
+    useEffect(() => {
         // Check if the user is on the home page
         setIsHome(location.pathname === '/');
     }, [location]);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
-        <nav className={`navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bothrefm border-body ${isHome ? 'sticky-top' : ''}`} data-bs-theme="dark">
-            <div className="container-fluid">
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav me-auhref">
-                        <li className="nav-item m-1">
-                            <Link to="/" className="nav-link fs-3" aria-current="page">Home</Link>
-                        </li>
-                        <li className="nav-item m-1 ms-3">
-                            <Link to="/about" className="nav-link fs-3">About us</Link>
-                        </li>
-                        <li className="nav-item m-1 ms-3">
-                            <Link to="/contactus" className="nav-link fs-3">Contact us</Link>
-                        </li>
-                        <li className="nav-item m-1 ms-3">
-                        <Link to="/contactus" className="nav-link fs-3">Our services</Link>
-                        </li>
-                    </ul>
+        <nav className={`navbar navbar-expand-lg bg-body-tertiary navbar border-bothrefm border-body ${isHome ? 'sticky-top' : ''}`} data-bs-theme="dark">
+            <div className="navbar-left">
+                <h2 id="logo">MeetMyDoc</h2>
+                
+            </div>
+            <div className={`navbar-center ${isMenuOpen ? 'mobile-menu' : ''}`}>
+                <Link to="/" className="nav-link" aria-current="page">Home</Link>
+                <Link to="/services" className="nav-link">Our services</Link>
+                <Link to="/contactus" className="nav-link">Contact us</Link>
+            </div>
+            <div className="navbar-right">
+                {user ? (
                     
-                    <ul className="navbar-nav">
-                        <li className="nav-item m-1 me-3">
-                            <Link to="/register" className="nav-link fs-3">Register</Link>
-                        </li>
-                        <li className="nav-item m-1 me-3">
-                            <Link to="/login" className="nav-link fs-3">Sign In</Link>
-                        </li>
-                    </ul>
+                        <div className='right-item'>
+                            <Link to='/mycredit'><div className='credit-'>Credit- {user.credits}</div></Link>
+                            <UserDropdown logout={logout} />
+                        </div>
+                    
+                ) : (
+                    <>
+                        <Link to="/login" className="login">Log in</Link>
+                        <Link to="/register" className="signup">Sign up</Link>
+                        </>
+                )}
+                <div className="menu-icon" onClick={toggleMenu}>
+                    ☰
                 </div>
             </div>
         </nav>

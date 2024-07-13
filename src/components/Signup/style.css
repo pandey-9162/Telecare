@@ -1,26 +1,92 @@
+/* Styles for the register component */
+.register-container {
+  background-image: url('../../assets/loginui.webp'); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* #welcome-heading{
+  font-size: 50px;
+  background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 600;
+} */
+#welcome-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
 
-.form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+.register-content {
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+.register-content h2 {
+  margin-bottom: 20px;
+  color: #333; /* Adjust heading color */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Transparent white border */
+  border-radius: 20px; /* Rounded border */
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+  color: #333; /* Adjust text color */
+}
+
+.input-field::placeholder {
+  color: black; /* Adjust placeholder text color */
   
-  .register-form {
-    border: 1px solid gray;
-    padding: 30px;
-  }
-=======
-.form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .register-form {
-    border: 1px solid gray;
-    padding: 30px;
-  }
->>>>>>> 6f709d71c43cab0e77b9793bb51abb04973cc226
-  
+}
+
+.btn-register {
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 20px; /* Rounded border */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-register:hover {
+  background-color: black; /* Fully opaque on hover */
+  color:#fff;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: node;
+}

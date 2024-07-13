@@ -1,4 +1,4 @@
-.form-container {
+/* .form-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,5 +14,165 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    font-family: "Roboto", sans-serif;;
+    font-weight: 800;
   }
-  
+.custom-caption h1 {
+  font-weight: 800;
+} */
+
+/* General styling */
+.carousel-button{
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 22px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+ 
+ .carousel-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+ .carousel-button:hover {
+  color: #e8e8e8;
+ }
+ 
+.carousel-button:hover::before {
+  width: 100%;
+ }
+.main-div {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Carousel styling */
+.carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-heading{
+  position: relative;
+  /* color:green; */
+}
+.carousel-heading {
+  font-size: 10vw; /* make our h1 tag larger */
+  font-family: sans-serif; /* choosing our font */
+  background: linear-gradient(to right, rgba(255, 215, 255, 0.2) 0%, rgba(225, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.1) 61%), linear-gradient(rgb(92, 18, 217) 52%, rgb(224, 246, 255) 60%, rgb(8, 9, 230) 61%); /* you can change the colors based on your preference */
+  background-clip: text; /*it defines how far the background should extend within an element, here we set it to text */
+  -webkit-background-clip: text; /*for browsers compatibility */
+  -webkit-text-fill-color: transparent; /* specifies the fill color of text characters. We use transparent to use the background as our text fill  */
+  animation: wave 2000ms ease alternate infinite;
+  transition: all 0.4s ease;
+}
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50vw 10px;
+  }
+}
+.text-danger{
+  font-weight:600;
+}
+
+.carousel-caption.custom-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color:#212121; 
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.carousel-caption h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+}
+
+/* Button styling */
+/* .btn {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+} */
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Use a different background image for mobile devices */
+  .carousel-item img {
+    content: url('../assets/3.jpg');
+  }
+
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

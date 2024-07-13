@@ -1,0 +1,20 @@
+.my-appointments {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.appointment-section {
+  margin-bottom: 30px;
+}
+
+.appointment-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.appointment-card p {
+  margin: 5px 0;
+}

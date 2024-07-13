@@ -1,10 +1,18 @@
 .social{
     display:flex;
-    justify-content: space-around;
-    padding: 25px;
+    margin-left:25%;
 }
+.social-icon{
+    margin-left:20px;
+    transition :color 0.3s;
+}
+.social-icon .fab:hover{
+    color:black;
+}
+
 .footer-main{
-    background-color:#0b9c86;
+    background:-webkit-linear-gradient(left, #3931af, #00c6ff);
+    color:#fff;
 }
 span{
     text-decoration:none;
@@ -16,3 +24,55 @@ span{
 .text-reset{
     text-decoration:none;
 }
+
+.footer-section{
+    display:flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+.footer-card ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+.footer-card ul li a{
+    text-decoration:none;
+    color:#fff;
+}
+
+.footer-card ul li :hover{
+    color:black;
+}
+
+@media (max-width: 768px) {
+    .footer-main .footer-section {
+        flex-direction: column;
+    }
+
+    .footer-main .footer-card {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .social{
+        padding:20px;
+        display:flex;
+        flex-direction:column;
+        align-item: center;
+    }
+    .social-icon{
+        margin-left:50%;
+    }
+    
+}
+  .contact-info li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom:0px;
+  }
+  

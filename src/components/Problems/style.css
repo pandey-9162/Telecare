@@ -1,0 +1,77 @@
+.common-health-concerns {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.subtitle {
+  display: flex;
+  flex :50%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titles {
+  padding: 10px;
+  margin: 8px 15px;
+  font-size:18px;
+}
+
+.see-all-symptoms {
+  margin-left: 20px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialties-container, .problems-container {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.specialty-card, .problem-card {
+  position: relative;
+  width: 200px;
+  margin: 0 10px; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content takes all available space */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.specialty-card img, .problem-card img {
+  max-width: 100px;
+  margin-bottom: 10px;
+  margin-left: 20%;
+}
+
+.specialty-card p, .problem-card p{
+  margin: 8px 0;
+  font-weight:600;
+}
+.specialty-card a,.problem-card a{
+  text-decoration: none;
+}
+
+
+.prev-button, .next-button {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.prev-button:hover, .next-button:hover {
+  background: #218838;
+}
