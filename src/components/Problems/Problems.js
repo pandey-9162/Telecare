@@ -107,7 +107,6 @@ const CommonHealthConcerns = () => {
           <button className="next-button" onClick={nextSpecialties}>&gt;</button>
         </div>
       </div>
-
       <div className="common-health-concerns">
         <h1>Common Health Concerns</h1>
         <div className='subtitle'>
