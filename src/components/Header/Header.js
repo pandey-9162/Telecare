@@ -32,6 +32,7 @@ function Header() {
             <div className="navbar-right">
                 {user ? (
                     <>
+                        <Link to='/mycredit'><div className='credit-'>Credit- {user.credits}</div></Link>
                         <UserDropdown logout={logout} />
                     </>
                 ) : (

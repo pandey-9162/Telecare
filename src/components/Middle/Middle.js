@@ -3,7 +3,7 @@ import './style.css';
 import cart1 from '../../assets/telecare.jpg';
 import cart2 from '../../assets/4.jpg';
 import cart3 from '../../assets/5.jpg';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
 
 const Middle = () => {
   return (
@@ -54,7 +54,7 @@ const Middle = () => {
           additional content. This card has even longer content than the first to show
           that equal height action.
         </p>
-        <button className='cart-button'>Know more</button>
+        <Link to="/more-about-meetmydoc"><button className='cart-button'>Know more</button></Link>
       </div>
   </div>
   <div className='cart'>
@@ -66,7 +66,7 @@ const Middle = () => {
           additional content. This card has even longer content than the first to show
           that equal height action.
         </p>
-        <button className='cart-button'>Know more</button>
+        <Link to="/more-about-meetmydoc"><button className='cart-button'>Know more</button></Link>
       </div>
   </div>
   <div className='cart'>
@@ -77,7 +77,7 @@ const Middle = () => {
           Quality care start here. 
           Join us for the flexibility to work remotely and connect with patients from anywhere, allowing you to balance your professional and personal life seamlessly.
         </p>
-        <button className='cart-button'>Know more</button>
+        <Link to="/more-about-meetmydoc"><button className='cart-button'>Know more</button></Link>
     </div>
   </div>
 </div>
@@ -88,8 +88,6 @@ const Middle = () => {
     <p class="fs-4">It started with a simple yet revolutionary idea. That everyone should have access to the best healthcare anywhere in the world on their terms. That includes you.</p>
     <button type="button" class="btn btn-outline-success">About us</button>
   </div>
-
-
 </div>
   );
 };

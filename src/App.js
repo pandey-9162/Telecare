@@ -14,6 +14,7 @@ import DoctorList from './components/DoctorList/Doctorlist';
 import MyAppointment from './components/MyAppointment/Myappointment';
 import Myprofile from "./components/Myprofile/Myprofile";
 import Credit from './components/Credit/Credit';
+import Individual from './components/Individual/Individual';
 function App() {
   return (
   
@@ -28,6 +29,7 @@ function App() {
       <Route exact path='/mycredit' element={<Credit/>}/>
       <Route exact path='/myprofile' element={<Myprofile/>}/>
       <Route exact path='/my-appointment' element={<MyAppointment/>}/>
+      <Route exact path='/more-about-meetmydoc' element={<Individual/>}/>
     </Routes>
 
   );

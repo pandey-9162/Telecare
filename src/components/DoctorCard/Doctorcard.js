@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './style.css';
 import { AuthContext } from "../../AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 const DoctorCard = ({ doctor }) => {
-    const { user } = useContext(AuthContext);
+    const { user, setUser } = useContext(AuthContext);
+    const navigate = useNavigate(); 
 
+    const [credits, setCredits] = useState(user ? user.credits : 0);
     if (!doctor) {
         console.error("Doctor data is undefined or null");
         return null;
@@ -13,24 +16,43 @@ const DoctorCard = ({ doctor }) => {
     const { name, photo, speciality, experience, rating, about, availableSlots } = doctor;
 
     const handleSlotClick = async (slot) => {
-        const userEmail = user.email; // Replace with the actual user's email
-        try {
-            const response = await fetch('http://localhost:5000/api/schedule-meeting', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    userEmail,
-                    doctorId: doctor._id,
-                    slot: slot,  
-                }),
-            });
-            const data = await response.json();
-            alert(data.message);
-        } catch (error) {
-            console.error('Error scheduling meeting:', error);
-            alert('Failed to schedule meeting');
+        const userEmail = user.email;
+        const credit = user.credits;
+
+        if(credit>0 && slot != "booked") {
+            try {
+                const response = await fetch('http://localhost:5000/api/schedule-meeting', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userEmail,
+                        doctorId: doctor._id,
+                        slot: slot,  
+                    }),
+                });
+                const data = await response.json();
+                if(data.message ==="Meeting scheduled successfully"){
+                    const newCredits = credit-1
+                    setCredits(newCredits);
+                    const updatedUser = { ...user, credits: newCredits };
+                    setUser(updatedUser);
+                    localStorage.setItem('user', JSON.stringify(updatedUser));
+                    }              
+                    alert(data.message);
+                    navigate("/my-appointment");
+            } catch (error) {
+                console.error('Error scheduling meeting:', error);
+                alert('Failed to schedule meeting');
+            }    
+        }
+        
+        else {
+            if(slot ==="booked")alert("Already Occupied");
+            else 
+            alert("You don't have enough credits to schedule a meeting");
+            navigate("/mycredit");
         }
     };
 
