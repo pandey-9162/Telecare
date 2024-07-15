@@ -50,9 +50,7 @@ const Middle = () => {
     <div class="cart-body">
         <h2 class="cart-title">INDIVIDUALS</h2>
         <p class="cart-desc">
-          This is a wider card with supporting text below as a natural lead-in to
-          additional content. This card has even longer content than the first to show
-          that equal height action.
+        MeetMydoc offers a wide range of telemedicine services for individuals, connecting them with healthcare professionals from the comfort of their homes. Services include primary care for routine check-ups and chronic disease management, specialist consultations in fields like cardiology and dermatology, and mental health support with licensed therapists. MeetMydoc ensures timely and convenient medical consultations, enhancing healthcare access and continuity for all patients.
         </p>
         <Link to="/more-about-meetmydoc"><button className='cart-button'>Know more</button></Link>
       </div>

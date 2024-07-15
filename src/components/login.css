@@ -1,27 +1,3 @@
-/* .form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  .register-form {
-    border: 1px solid gray;
-    padding: 30px;
-  }
-  .custom-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: "Roboto", sans-serif;;
-    font-weight: 800;
-  }
-.custom-caption h1 {
-  font-weight: 800;
-} */
-
-/* General styling */
 .carousel-button{
   padding: 15px 25px;
   border: unset;
@@ -106,7 +82,7 @@
 }
 
 .carousel-caption.custom-caption {
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -125,25 +101,7 @@
   font-size: 1.5rem;
 }
 
-/* Button styling */
-/* .btn {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  padding: 12px 24px;
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: transparent;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #fff;
-  color: #000;
-} */
-
-/* Media queries for responsiveness */
 @media (max-width: 768px) {
-  /* Use a different background image for mobile devices */
   .carousel-item img {
     content: url('../assets/3.jpg');
   }
@@ -156,7 +114,7 @@
     font-size: 1.2rem;
   }
 
-  .btn {
+  .carousel-button{
     font-size: 1rem;
     padding: 10px 20px;
   }
@@ -171,8 +129,14 @@
     font-size: 1rem;
   }
 
-  .btn {
+  .carousel-button {
     font-size: 0.9rem;
     padding: 8px 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel-button{
+    font-size: 0.9rem;
   }
 }

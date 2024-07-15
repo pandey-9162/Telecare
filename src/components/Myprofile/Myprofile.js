@@ -51,7 +51,7 @@ function Myprofile() {
                                     </li>
                                     <li className="nav-item">
                                         <a
-                                            className="nav-link"
+                                            className="nav-link active"
                                             id="profile-tab"
                                             data-toggle="tab"
                                             href="#profile"

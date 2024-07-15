@@ -3,6 +3,7 @@ import './style.css'; // Add some basic styling
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { AuthContext } from '../../AuthContext';
+const base_url = "https://meetmydoc-backend-1.onrender.com";
 
 const MyAppointment = () => {
   const { user } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const MyAppointment = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/appointments?userId=${user._id}`);
+        const response = await fetch(`${base_url}/api/appointments?userId=${user._id}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

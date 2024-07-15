@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from "react";
 import { Link,useNavigate } from 'react-router-dom';
 import "./style.css"; 
+const base_url = "https://meetmydoc-backend-1.onrender.com"
 
 const Register = () => {
   const navigate = useNavigate() ;
@@ -30,7 +31,7 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch(`${base_url}/api/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

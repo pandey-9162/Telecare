@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
 import { useNavigate } from 'react-router-dom';
+const base_url = "https://meetmydoc-backend-1.onrender.com";
 
 const Recharge = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Recharge = () => {
     try {
       const { email, password } = user;
       const response = await axios.post(
-        'http://localhost:5000/api/recharge',
+        `${base_url}/api/recharge`,
         { userId: user._id, amount },
         {
           headers: {

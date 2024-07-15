@@ -54,13 +54,17 @@ span{
         text-align: center;
     }
     .social{
-        padding:20px;
+        padding:12px;
         display:flex;
         flex-direction:column;
         align-item: center;
     }
+    .social .text{
+        margin-bottom:5px;
+        text-decoration:none;
+    }
     .social-icon{
-        margin-left:50%;
+        margin-left:3%;
     }
     
 }

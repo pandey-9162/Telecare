@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link,  useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext'; 
 import "./style.css"; 
-
+const base_url = "https://meetmydoc-backend-1.onrender.com";
 const Login = () => {
   const { login } = useContext(AuthContext); 
   const navigate = useNavigate(); 
@@ -31,7 +31,7 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch(`${base_url}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

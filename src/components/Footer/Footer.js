@@ -1,5 +1,9 @@
 import React from 'react';
 import "./style.css";
+import { AuthContext } from '../../AuthContext';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faEnvelope,faPhone } from '@fortawesome/free-solid-svg-icons';
+
 
 function Footer() {
     return (
@@ -34,8 +38,8 @@ function Footer() {
                 <div className='footer-card'>
                     <h5>Our Contact</h5>
                     <ul className="contact-info">
-                <li><a href='#'>info@meetmydoc.com</a></li>
-                <li><a href='#'><i className="fab fa-facebook-f"></i>+9324875298734</a></li>
+                <li><a href='#'><FontAwesomeIcon icon={faEnvelope} /> info@meetmydoc.com</a></li>
+                <li><a href='#'><FontAwesomeIcon icon={faPhone} /> +916299624192</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,6 +61,7 @@ function Footer() {
                         <i className="fab fa-instagram"></i>
                     </a>
                 </div>
+            
           </div>
             <div className="footer-bottom">
           <p>&copy; 2024 MeetMyDoc. All rights reserved.</p>
