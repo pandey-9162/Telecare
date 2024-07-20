@@ -10,7 +10,7 @@
 
 # production
 /build
-
+/https://script.google.com/macros/s/AKfycbwFAq-3sf68Ix44qpHFzdCcVs3s1zfkHD7ac0O3wKlNjyketNakUbcV4orw77ZsbmKNQA/exec
 # misc
 .DS_Store
 .env.local

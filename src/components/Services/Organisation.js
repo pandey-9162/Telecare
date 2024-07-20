@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React ,{ useState } from 'react';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
 import Header from "../NavBar/Navbar";
 import Footer from '../Footer/Footer';
 
 const Organizations = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
 
   const faqs = [
     {
@@ -35,6 +44,30 @@ const Organizations = () => {
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const scriptURL = 'https://sheet.best/api/sheets/31aa46a8-84b9-43a8-b29c-32b27e050138';
+    try {
+      await axios.post(scriptURL, formData);
+      // toast.success('Form submitted successfully!', {
+      //   position: toast.POSITION.TOP_RIGHT
+      // });
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setIsModalOpen(false);
+    } catch (error) {
+      // toast.error('Error submitting form', {
+      //   position: toast.POSITION.TOP_RIGHT
+      // });
+      console.error(error);
+    }
   };
 
   return (
@@ -96,22 +129,22 @@ const Organizations = () => {
           <div className="modal-content">
             <button className="close-button" onClick={toggleModal}>&times;</button>
             <h2>Join MeetMyDoc</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" required />
+                <label htmlFor="name">Organizations Name</label>
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required />
+                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
               </div>
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="4" />
+                <textarea id="message" name="message" rows="4" value={formData.message} onChange={handleChange} />
               </div>
               <button type="submit" className="submit-button">Submit</button>
             </form>
@@ -119,6 +152,7 @@ const Organizations = () => {
         </div>
       )}
       <Footer />
+      <ToastContainer />
     </>
   );
 };

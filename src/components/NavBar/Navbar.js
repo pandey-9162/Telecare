@@ -33,7 +33,7 @@ function NavBar() {
           className="nav-link" 
           onMouseEnter={() => setDropdown(true)}
           onMouseLeave={() => setDropdown(false)}
-          onClick={() => setDropdown(!dropdown)}
+          // onClick={() => setDropdown(!dropdown)}
         >
           Our Services
           {dropdown && (
@@ -50,7 +50,7 @@ function NavBar() {
             </ul>
           )}
         </div>
-        <Link to="/contactus" className="nav-link">Contact us</Link>
+        <Link to="/footer" className="nav-link">Contact us</Link>
       </div>
             <div className="navbar-right">
                 {user ? (

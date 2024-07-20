@@ -2,7 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link,  useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext'; 
 import "./style.css"; 
-const base_url = "https://meetmydoc-backend-1.onrender.com";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const base_url = "http://localhost:5000" ; //"https://meetmydoc-backend-2.onrender.com";
 const Login = () => {
   const { login } = useContext(AuthContext); 
   const navigate = useNavigate(); 
@@ -28,6 +30,12 @@ const Login = () => {
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const showToastMessage = () => {
+    toast.success("Registation Successfull!", {
+      position: 'top-right',
+    });
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -41,9 +49,10 @@ const Login = () => {
       const data = await response.json();
       if(!data) console.log("no data");
       if (response.ok) {
-        console.log('User logged in successfully:', data);
+        console.log('User logged in successfully');
         login(data);
-        alert("You logged in successfully") 
+        showToastMessage();
+        // alert("You logged in successfully") 
         navigate('/');
       } else {
         // Handle error (e.g., show error message)
@@ -71,6 +80,7 @@ const Login = () => {
             </div>
             <button type="submit" className="btn-register">Log In</button>
           </form>
+          <ToastContainer/>
           <div className="login-link">
               Don't have an account? <Link to="/register">Register</Link>
           </div>

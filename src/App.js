@@ -16,6 +16,8 @@ import Myprofile from "./components/Myprofile/Myprofile";
 import Credit from './components/Credit/Credit';
 import Individual from './components/Services/Individual';
 import Organisation from './components/Services/Organisation';
+import Footer from './components/Footer/Footer';
+// import Chat from './components/Chat/Chat';
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
       <Route exact path='/my-appointment' element={<MyAppointment/>}/>
       <Route exact path='/more-about-meetmydoc' element={<Individual/>}/>
       <Route exact path='/service/organization' element={<Organisation/>}/>
+      <Route exact path='/footer' element={<Footer/>}/>
+      {/* <Route exact path='/chat' element={<Chat/>}/> */}
+
     </Routes>
 
   );

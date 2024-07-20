@@ -1,9 +1,14 @@
-import React, { useState , useEffect } from "react";
+import React, { useState , useEffect, useContext } from "react";
 import { Link,useNavigate } from 'react-router-dom';
 import "./style.css"; 
-const base_url = "https://meetmydoc-backend-1.onrender.com"
+const base_url = "http://localhost:5000"; // "https://meetmydoc-backend-2.onrender.com"
+import { AuthContext } from "../../AuthContext";
+import { ToastContainer } from "react-toastify";
+
 
 const Register = () => {
+  const { login } = useContext(AuthContext); 
+
   const navigate = useNavigate() ;
   const [formData, setFormData] = useState({
     name: "",
@@ -28,6 +33,12 @@ const Register = () => {
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const showToastMessage = () => {
+    toast.success("Registation Successfull!", {
+      position: 'top-right',
+    });
+  };
+  
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -43,7 +54,9 @@ const Register = () => {
       if (response.ok) {
         // Handle success (e.g., redirect to login page or show success message)
         console.log('User registered successfully:', data);
-        alert("User registered successfully!")
+        showToastMessage();
+        // alert("User registered successfully!");
+        login(data);
         navigate('/');
       } else {
         // Handle error (e.g., show error message)
@@ -56,7 +69,8 @@ const Register = () => {
   
 
   return (
-    <>
+    <>.
+      <ToastContainer/>
       {/* <Header /> Your header component */}
       <div className="register-container">
         <div id="welcome-heading" style={{ opacity: 1 }}>{welcomeMessage}</div>        <div className="register-content">

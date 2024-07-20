@@ -3,7 +3,7 @@ import DoctorCard from '../DoctorCard/Doctorcard';
 import Header from '../Header/Header';
 import Footer from "../Footer/Footer";
 import './style.css';
-const base_url = "https://meetmydoc-backend-1.onrender.com";
+const base_url = "http://localhost:5000" ;// "https://meetmydoc-backend-2.onrender.com";
 
 const DoctorsList = () => {
     const [doctors, setDoctors] = useState([]);
@@ -14,12 +14,12 @@ const DoctorsList = () => {
         const fetchDoctors = async () => {
             try {
                 const response = await fetch(`${base_url}/api/doctors`);
-                console.log('Response:', response);
+                // console.log('Response:', response);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                console.log('Fetched doctors:', data);
+                // console.log('Fetched doctors:', data);
                 setDoctors(data);
             } catch (error) {
                 console.error('Error fetching doctors:', error);

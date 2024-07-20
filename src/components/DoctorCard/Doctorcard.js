@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './style.css';
 import { AuthContext } from "../../AuthContext";
 import { useNavigate } from 'react-router-dom';
-const base_url = "https://meetmydoc-backend-1.onrender.com";
+const base_url = "http://localhost:5000" ;// "https://meetmydoc-backend-2.onrender.com";
 const DoctorCard = ({ doctor }) => {
     const { user, setUser } = useContext(AuthContext);
     const navigate = useNavigate(); 

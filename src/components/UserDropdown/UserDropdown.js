@@ -9,7 +9,7 @@ import {faCalendarCheck, faCrown, faGear, faHandshakeAngle, faMoneyBill, faNotes
 
 const UserDropdown = ({ logout }) => {
   const {user} = useContext(AuthContext);
-
+  const id = user.userid;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -26,7 +26,7 @@ const UserDropdown = ({ logout }) => {
       {isOpen && (
         <div className="dropdown-card">
           <span className="username">{user.name}</span>
-          <Link to="/myprofile" className="dropdown-item">
+          <Link to='/myprofile' className="dropdown-item">
           <FontAwesomeIcon icon={faUserTag}/> My Profile</Link>
           <Link to="/subscription" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faCrown}/>Subscription</Link>

@@ -3,7 +3,7 @@ import './style.css'; // Add some basic styling
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { AuthContext } from '../../AuthContext';
-const base_url = "https://meetmydoc-backend-1.onrender.com";
+const base_url = "http://localhost:5000" ;//"https://meetmydoc-backend-2.onrender.com";
 
 const MyAppointment = () => {
   const { user } = useContext(AuthContext);

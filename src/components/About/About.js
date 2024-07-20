@@ -1,9 +1,14 @@
 import React from 'react';
 import "./style.css";
+const photoUrl = 'https://meetmydoc-img.s3.ap-south-1.amazonaws.com/IMG_20220505_160140.jpg'; // Replace with your S3 URL
 
 const About = () => {
   return (
     <>
+	 <div>
+      <h2>Doctor Profile</h2>
+      <img src={photoUrl} alt="Doctor" style={{ width: '200px', height: '200px' }} />
+    </div>
      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
     <div class="navbar-header">
