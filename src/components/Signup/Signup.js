@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import "./style.css"; 
@@ -8,6 +9,20 @@ const base_url = 'http://localhost:5000';
 const Register = () => {
   const { login } = useContext(AuthContext); 
   const navigate = useNavigate();
+=======
+import React, { useState , useEffect, useContext } from "react";
+import { Link,useNavigate } from 'react-router-dom';
+import "./style.css"; 
+const base_url = "http://localhost:5000"; // "https://meetmydoc-backend-2.onrender.com"
+import { AuthContext } from "../../AuthContext";
+import { ToastContainer } from "react-toastify";
+
+
+const Register = () => {
+  const { login } = useContext(AuthContext); 
+
+  const navigate = useNavigate() ;
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,6 +48,12 @@ const Register = () => {
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const showToastMessage = () => {
+    toast.success("Registation Successfull!", {
+      position: 'top-right',
+    });
+  };
+  
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitting form data:', formData);
@@ -48,7 +69,12 @@ const Register = () => {
       console.log('Server response:', data);
       if (response.ok) {
         console.log('User registered successfully:', data);
+<<<<<<< HEAD
         alert("User registered successfully!");
+=======
+        showToastMessage();
+        // alert("User registered successfully!");
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
         login(data);
         navigate('/');
       } else {
@@ -62,7 +88,13 @@ const Register = () => {
   };
 
   return (
+<<<<<<< HEAD
     <>
+=======
+    <>.
+      <ToastContainer/>
+      {/* <Header /> Your header component */}
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
       <div className="register-container">
         <div id="welcome-heading" style={{ opacity: 1 }}>{welcomeMessage}</div>
         <div className="register-content">

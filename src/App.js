@@ -17,8 +17,12 @@ import Credit from './components/Credit/Credit';
 import Individual from './components/Services/Individual';
 import Organisation from './components/Services/Organisation';
 import Footer from './components/Footer/Footer';
+<<<<<<< HEAD
 import Service from './components/Services/Services';
 import PaymentValidation from './PaymentValidation'; // This is the component to handle the validation
+=======
+// import Chat from './components/Chat/Chat';
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
 
 function App() {
   return (
@@ -37,8 +41,12 @@ function App() {
       <Route exact path='/more-about-meetmydoc' element={<Individual/>}/>
       <Route exact path='/service/organization' element={<Organisation/>}/>
       <Route exact path='/footer' element={<Footer/>}/>
+<<<<<<< HEAD
       <Route exact path='/service' element={<Service/>}/>
       <Route path="/payment/validate/:merchantTransactionId" element={<PaymentValidation />} />
+=======
+      {/* <Route exact path='/chat' element={<Chat/>}/> */}
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
 
     </Routes>
 

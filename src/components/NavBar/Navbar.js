@@ -29,7 +29,31 @@ function NavBar() {
             </div>
             <div className={`navbar-center ${isMenuOpen ? 'mobile-menu' : ''}`}>
         <Link to="/" className="nav-link" aria-current="page">Home</Link>
+<<<<<<< HEAD
         <Link to="/service" className="nav-link" aria-current="page">Services</Link>
+=======
+        <div 
+          className="nav-link" 
+          onMouseEnter={() => setDropdown(true)}
+          onMouseLeave={() => setDropdown(false)}
+          // onClick={() => setDropdown(!dropdown)}
+        >
+          Our Services
+          {dropdown && (
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/services/individual" className="dropdown-link">Individual Services</Link>
+              </li>
+              <li>
+                <Link to="/services/clinical" className="dropdown-link">Clinical Services</Link>
+              </li>
+              <li>
+                <Link to="/services/organization" className="dropdown-link">Organizational Services</Link>
+              </li>
+            </ul>
+          )}
+        </div>
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
         <Link to="/footer" className="nav-link">Contact us</Link>
       </div>
             <div className="navbar-right">

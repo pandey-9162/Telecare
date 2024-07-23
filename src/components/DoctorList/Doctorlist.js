@@ -14,10 +14,18 @@ const DoctorsList = () => {
         const fetchDoctors = async () => {
             try {
                 const response = await fetch(`${base_url}/api/doctors`);
+<<<<<<< HEAD
+=======
+                // console.log('Response:', response);
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+<<<<<<< HEAD
+=======
+                // console.log('Fetched doctors:', data);
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
                 setDoctors(data);
             } catch (error) {
                 console.error('Error fetching doctors:', error);

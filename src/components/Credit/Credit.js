@@ -6,8 +6,13 @@ import Footer from "../Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
+<<<<<<< HEAD
 
 const base_url = 'http://localhost:5000';
+=======
+import { useNavigate } from 'react-router-dom';
+const base_url = 'http://localhost:5000'; //"https://meetmydoc-backend-2.onrender.com";
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
 
 const Recharge = () => {
   const { user } = useContext(AuthContext);
@@ -57,8 +62,13 @@ const Recharge = () => {
       const { email, password, _id } = user;
       
       const response = await axios.post(
+<<<<<<< HEAD
         `${base_url}/payment/pay`,
         { userId: _id, amount },
+=======
+        `${base_url}/api/recharge`,
+        { userId: user._id, amount },
+>>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
         {
           headers: {
             'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
