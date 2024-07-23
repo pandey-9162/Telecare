@@ -14,7 +14,12 @@ import DoctorList from './components/DoctorList/Doctorlist';
 import MyAppointment from './components/MyAppointment/Myappointment';
 import Myprofile from "./components/Myprofile/Myprofile";
 import Credit from './components/Credit/Credit';
-import Individual from './components/Individual/Individual';
+import Individual from './components/Services/Individual';
+import Organisation from './components/Services/Organisation';
+import Footer from './components/Footer/Footer';
+import Service from './components/Services/Services';
+import PaymentValidation from './PaymentValidation'; // This is the component to handle the validation
+
 function App() {
   return (
   
@@ -30,6 +35,11 @@ function App() {
       <Route exact path='/myprofile' element={<Myprofile/>}/>
       <Route exact path='/my-appointment' element={<MyAppointment/>}/>
       <Route exact path='/more-about-meetmydoc' element={<Individual/>}/>
+      <Route exact path='/service/organization' element={<Organisation/>}/>
+      <Route exact path='/footer' element={<Footer/>}/>
+      <Route exact path='/service' element={<Service/>}/>
+      <Route path="/payment/validate/:merchantTransactionId" element={<PaymentValidation />} />
+
     </Routes>
 
   );

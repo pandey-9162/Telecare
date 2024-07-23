@@ -3,6 +3,17 @@
     top: 0;
     z-index: 1000; 
 }
+.right-item{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.credit-{
+    color: #f1c40f;
+    margin-right:30px;
+    font-size: 1.5rem;
+    text-decoration:none;
+}
 
 #logo{
     font-family: "Alkatra", system-ui;
@@ -11,6 +22,7 @@
     font-style: italic;
     margin: 0;
     cursor: pointer;
+    text-decoration: none;
 }
 #logo:hover{
     color: #05f792;
@@ -28,6 +40,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-left {
@@ -51,7 +66,31 @@ body {
 .nav-link:hover {
     color: #90EE90; 
 }
-
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    color: black;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .dropdown-link {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+  
+  .dropdown-link:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+  
 .navbar-right {
     flex: 1;
     display: flex;
@@ -71,6 +110,18 @@ body {
 
 /* Responsive Navbar styling */
 @media (max-width: 768px) {
+    .navbar-center {
+        display: none;
+      }
+      .credit-{
+        display:none;
+      }
+      .navbar-center.mobile-menu {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
     .navbar-center {
         display: none;
     }

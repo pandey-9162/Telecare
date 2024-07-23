@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
 import { AuthContext } from '../../AuthContext';
@@ -16,7 +15,6 @@ function NavBar() {
     const [dropdown, setDropdown] = useState(false);
 
     useEffect(() => {
-        // Check if the user is on the home page
         setIsHome(location.pathname === '/');
     }, [location]);
 
@@ -29,41 +27,15 @@ function NavBar() {
             <div className="navbar-left">
             <Link to="/"><h2 id="logo">MeetMyDoc</h2></Link>   
             </div>
-            {/* <div className={`navbar-center ${isMenuOpen ? 'mobile-menu' : ''}`}>
-                <Link to="/" className="nav-link" aria-current="page">Home</Link>
-                <Link to="/services" className="nav-link">Our services</Link>
-                <Link to="/contactus" className="nav-link">Contact us</Link>
-            </div> */}
             <div className={`navbar-center ${isMenuOpen ? 'mobile-menu' : ''}`}>
         <Link to="/" className="nav-link" aria-current="page">Home</Link>
-        <div 
-          className="nav-link" 
-          onMouseEnter={() => setDropdown(true)}
-          onMouseLeave={() => setDropdown(false)}
-          onClick={() => setDropdown(!dropdown)}
-        >
-          Our Services
-          {dropdown && (
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/services/individual" className="dropdown-link">Individual Services</Link>
-              </li>
-              <li>
-                <Link to="/services/clinical" className="dropdown-link">Clinical Services</Link>
-              </li>
-              <li>
-                <Link to="/services/organization" className="dropdown-link">Organizational Services</Link>
-              </li>
-            </ul>
-          )}
-        </div>
-        <Link to="/contactus" className="nav-link">Contact us</Link>
+        <Link to="/service" className="nav-link" aria-current="page">Services</Link>
+        <Link to="/footer" className="nav-link">Contact us</Link>
       </div>
             <div className="navbar-right">
                 {user ? (
-                    
                         <div className='right-item'>
-                            <Link to='/mycredit'><div className='credit-'>Credit- {user.credits}</div></Link>
+                            <Link to='/mycredit'><div className='credit-'>Credit {user.credits}</div></Link>
                             <UserDropdown logout={logout} />
                         </div>
                     
@@ -74,11 +46,12 @@ function NavBar() {
                         </>
                 )}
                 <div className="menu-icon" onClick={toggleMenu}>
-                    ☰
+                    {isMenuOpen ? '✖' : '☰'}
                 </div>
             </div>
         </nav>
     );
 }
-
 export default NavBar;
+
+

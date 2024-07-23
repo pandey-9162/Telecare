@@ -157,3 +157,56 @@
     margin: 30px 0;
     background:#f9f9f9;
 }
+
+.payment-validation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .payment-validation-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .payment-validation-card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .status-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .status-message.success {
+    background-color: #4caf50;
+  }
+  
+  .status-message.failure {
+    background-color: #f44336;
+  }
+  
+  .details {
+    text-align: left;
+  }
+  
+  .details p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .details strong {
+    color: #555;
+  }
+  

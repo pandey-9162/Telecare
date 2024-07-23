@@ -6,13 +6,13 @@ import Footer from "../Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
-import { useNavigate } from 'react-router-dom';
+
+const base_url = 'http://localhost:5000';
 
 const Recharge = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [credits, setCredits] = useState(user ? user.credits : 0);
   const [amount, setAmount] = useState(0);
-  const navigate = useNavigate();
 
   const showToastMessage = () => {
     toast.success("Recharge Success!", {
@@ -20,18 +20,45 @@ const Recharge = () => {
     });
   };
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    if (user) {
-      setCredits(user.credits);
-    }
+    const fetchCredit = async () => {
+      if (!user._id) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const response = await axios.get(`${base_url}/api/point?userId=${user._id}`);
+        setCredits(response.data.credit);
+      } catch (error) {
+        console.error('Error fetching credits:', error);
+        setError(error.message || 'Error fetching credits');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCredit();
   }, [user]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   const handleRecharge = async () => {
     try {
-      const { email, password } = user;
+
+      const { email, password, _id } = user;
+      
       const response = await axios.post(
-        'http://localhost:5000/api/recharge',
-        { userId: user._id, amount },
+        `${base_url}/payment/pay`,
+        { userId: _id, amount },
         {
           headers: {
             'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
@@ -39,17 +66,19 @@ const Recharge = () => {
           },
         }
       );
-
-      const newCredits = response.data.credits;
-      setCredits(newCredits);
-      const updatedUser = { ...user, credits: newCredits };
-      setUser(updatedUser);
-      localStorage.setItem('user', JSON.stringify(updatedUser));
-      showToastMessage();
+  
+      if (response.data.redirectUrl) {
+        window.location.href = response.data.redirectUrl;
+        // showToastMessage();
+      }
     } catch (error) {
-      console.error('Error recharging account', error);
+      console.error('Error recharging account:', error.message || error);
+      toast.error(`Error: ${error.message || 'Network Error'}`, {
+        position: 'top-right',
+      });
     }
   };
+  
 
   return (
     <>
@@ -57,10 +86,10 @@ const Recharge = () => {
       <div className='main-credit-card'>
         <div className='credit-card'>
           <div className='heading'>
-            {user ? <h1>Hii {user.name}</h1> : <h1>Guest</h1>}
+            <h1>{user ? `Hi ${user.name}` : 'Guest'}</h1>
             <h2>Available Credits: {credits}</h2>
           </div>
-          <p>Recharge Now and get Credit point for Constulatant</p>
+          <p>Recharge Now and get Credit points for consultations</p>
           <div className='gif'>
             <div className='credit-card-content'>
               <div>
@@ -72,15 +101,15 @@ const Recharge = () => {
                 />
               </div>
               <div>
-                <p onClick={handleRecharge} className="fancy" href="#">
+                <button onClick={handleRecharge} className="fancy">
                   <span className="top-key"></span>
                   <span className="text">Recharge</span>
                   <span className="bottom-key-1"></span>
                   <span className="bottom-key-2"></span>
-                </p>
-                <ToastContainer/>       
+                </button>
+                <ToastContainer />       
               </div>
-              <p>Note: For every &#x20b9;100 recharge you will get 1 credit point.</p>
+              <p>Note: For every ₹100 recharge, you will get 1 credit point.</p>
             </div>
           </div>
         </div>

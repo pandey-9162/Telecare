@@ -1,61 +1,82 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.hero-section {
+  background-color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 40px 20px;
+}
+
 .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 25px; 
-  flex :50%;
-  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.text {
-  max-width: 50%;
+.text-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
 }
 
-.text h1 {
-  margin: 0 0 20px;
-  color: ;
+.text-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-.text p {
-  font-size: 16px;
-  margin: 0 0 20px;
+.text-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 .doctor-info {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .doctor-img {
-  border-radius: 50%;
-  /* margin-right: 10px; */
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .online-dot {
   color: green;
+  font-size: 1.5em;
 }
 
 .button-group {
-  margin-top: 20px;
+  margin-bottom:12px;
 }
 
-.button-group .btn {
+.btn {
   margin-right: 10px;
 }
 
-
 .features {
-  margin-top: 20px;
-  font-size: 10px;
+  font-size: 1em;
+  color: #555;
 }
 
-.features p {
-  margin: 5px 0;
+.image-content {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-.image img {
+.hero-image {
   max-width: 100%;
   height: auto;
 }
@@ -63,14 +84,48 @@
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    text-align: center;
   }
 
-  .text {
-    max-width: 100%;
+  .text-content h1 {
+    font-size: 2em;
   }
 
-  .doctor-info {
-    justify-content: center;
+  .text-content p {
+    font-size: 1em;
   }
-} 
+
+  .doctor-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-content h1 {
+    font-size: 1.5em;
+  }
+
+  .text-content p {
+    font-size: 0.9em;
+  }
+  .btn{
+    font-size: 0.8em;
+  }
+  .btn-primary{
+    width:50%;
+  }
+
+  .doctor-img {
+    width: 30px;
+    height: 30px;
+  }
+}

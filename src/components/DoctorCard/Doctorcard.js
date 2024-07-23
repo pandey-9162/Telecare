@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './style.css';
 import { AuthContext } from "../../AuthContext";
 import { useNavigate } from 'react-router-dom';
-
+const base_url = "http://localhost:5000" ;// "https://meetmydoc-backend-2.onrender.com";
 const DoctorCard = ({ doctor }) => {
     const { user, setUser } = useContext(AuthContext);
     const navigate = useNavigate(); 
@@ -21,7 +21,7 @@ const DoctorCard = ({ doctor }) => {
 
         if(credit>0 && slot != "booked") {
             try {
-                const response = await fetch('http://localhost:5000/api/schedule-meeting', {
+                const response = await fetch(`${base_url}/api/schedule-meeting`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

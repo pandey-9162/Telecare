@@ -64,7 +64,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #90EE90; 
+    color: #90EE93;
 }
 .dropdown-menu {
     position: absolute;
@@ -101,7 +101,7 @@ body {
     color: #FFFFFF;
     margin-left: 1rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .login:hover, .signup:hover {
@@ -112,6 +112,9 @@ body {
 @media (max-width: 768px) {
     .navbar-center {
         display: none;
+      }
+      .credit-{
+        display:none;
       }
       .navbar-center.mobile-menu {
         display: flex;
@@ -169,7 +172,53 @@ body {
     text-align: center;
 }
 
-/* Hide the three-line menu icon by default */
 .menu-icon {
     display: none;
+}
+
+
+@media (max-width: 450px){
+    .navbar-center {
+        display: none;
+      }
+      .credit-{
+        display:none;
+      }
+      .navbar-center.mobile-menu {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    .navbar-center {
+        display: none;
+    }
+    .login, .signup {
+        font-size: 0.9rem;
+    }
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-left {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .navbar-right {
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar-right .menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        margin-left: 15px; 
+    }
+    .login{
+        display:none;
+    }
 }

@@ -3,9 +3,58 @@ import './style.css';
 
 const OurServices = () => {
   return (
-    <div className="services-container">
-      <h1>Our Services</h1>
-      
+    <>
+    <div className="meetmydoc-container">
+            <header className="meetmydoc-header">
+                <h1>MeetMyDoc: Your Health, Your Way</h1>
+                <p className="subheading">Health on Your Fingertip</p>
+            </header>
+            <section className="meetmydoc-content">
+                <h2>What We Offer:</h2>
+                <ul>
+                    <li>
+                        <strong>Personalized Health Management:</strong> Tailored healthcare experience with customized scheduling and health tracking.
+                    </li>
+                    <li>
+                        <strong>Convenient Access to Experts:</strong> Connect with top doctors and specialists easily.
+                    </li>
+                    <li>
+                        <strong>Streamlined Communication:</strong> Seamless interaction with your healthcare team from home.
+                    </li>
+                    <li>
+                        <strong>Health Records at Your Fingertips:</strong> Secure, digital access to your medical history and test results.
+                    </li>
+                    <li>
+                        <strong>Comprehensive Health Insights:</strong> Integrates with health tracking devices for a holistic view.
+                    </li>
+                    <li>
+                        <strong>Easy Scheduling and Reminders:</strong> Book, reschedule, or cancel appointments effortlessly with automated reminders.
+                    </li>
+                    <li>
+                        <strong>Secure and Confidential:</strong> Advanced security measures to protect your personal health information.
+                    </li>
+                </ul>
+                <h2>Why Choose MeetMyDoc?</h2>
+                <ul>
+                    <li>User-Friendly Design: Accessible for everyone, regardless of tech-savviness.</li>
+                    <li>24/7 Support: Dedicated customer support around the clock.</li>
+                    <li>Innovative Solutions: Continuously updated with the latest healthcare technology advancements.</li>
+                </ul>
+                <h2>Experience Healthcare Like Never Before</h2>
+                <p>
+                    MeetMyDoc is committed to putting your health first, making it easier to stay informed, connected, and in control. 
+                    Your health is always within reach, empowering you to make better decisions and live your best life.
+                </p>
+                <h2>Get Started Today</h2>
+                <p>
+                    Join the growing community of people taking charge of their health with MeetMyDoc. 
+                    Visit our website or download our app to start your journey towards a healthier, more empowered you.
+                </p>
+                <p><strong>MeetMyDoc: Health on Your Fingertip.</strong></p>
+            </section>
+        </div>
+        <div className="services-container">
+      <h1>Our Services</h1> 
       <section className="service-section">
         <h2>Individual Services</h2>
         <p>MeetMydoc offers a range of telemedicine services tailored to individual patients. Our platform allows you to consult with healthcare professionals from the comfort of your home, ensuring that you receive the medical attention you need without the inconvenience of travel.</p>
@@ -17,9 +66,8 @@ const OurServices = () => {
         <p>Mental health is crucial for overall well-being. Our platform offers sessions with licensed therapists and psychiatrists who can help with issues such as anxiety, depression, and stress management.</p>
         <h3>How MeetMydoc Helps</h3>
         <p>MeetMydoc streamlines the process of accessing individual healthcare services. Our user-friendly interface makes it easy to find and book appointments with healthcare providers, attend virtual consultations, and manage your health records online.</p>
-        <button className='More-Details'>More Details</button>
+        <a href='/more-about-meetmydoc'><button className='More-Details'>More Details</button></a>
       </section>
-      
       <section className="service-section">
         <h2>Clinical Services</h2>
         <p>MeetMydoc supports clinical practices by offering tools for telehealth consultations, patient management, and streamlined administrative processes.</p>
@@ -31,9 +79,8 @@ const OurServices = () => {
         <p>We provide clinics with tools to handle billing, insurance claims, and other administrative tasks, reducing the workload on staff and allowing them to focus more on patient care.</p>
         <h3>How MeetMydoc Helps</h3>
         <p>MeetMydoc enhances the efficiency of clinical operations by integrating telemedicine into everyday practice. Our platform reduces no-show rates, improves patient engagement, and ensures continuity of care through seamless communication and record-keeping.</p>
-        <button className='More-Details'>More Details</button>
+        <a href="/service/organization"><button className='More-Details'>More Details</button></a>
       </section>
-      
       <section className="service-section">
         <h2>Organizational Services</h2>
         <p>MeetMydoc offers comprehensive telemedicine solutions for organizations, including corporate wellness programs, occupational health services, and remote employee healthcare.</p>
@@ -45,10 +92,12 @@ const OurServices = () => {
         <p>For organizations with remote or dispersed workforces, MeetMydoc offers telemedicine solutions that provide employees with access to healthcare services regardless of their location. This includes virtual consultations, mental health support, and chronic disease management.</p>
         <h3>How MeetMydoc Helps</h3>
         <p>MeetMydoc assists organizations in maintaining a healthy workforce by providing accessible healthcare services and wellness programs. Our platform supports employees’ health needs, enhances productivity, and reduces healthcare costs through early intervention and continuous care.</p>
-        <button className='More-Details'>More Details</button>
+        <a href='/more-about-meetmydoc'><button className='More-Details'>More Details</button></a>
       </section>
     </div>
+    </>
   );
 };
 
 export default OurServices;
+
