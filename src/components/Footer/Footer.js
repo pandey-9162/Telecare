@@ -14,10 +14,10 @@ function Footer() {
                 <div className='footer-card'>
                     <h5>Important Link</h5>
                     <ul>
-                        <li><a href="/aboutus">About us</a></li>
-                        <li><a href="/footer">Contact us</a></li>
-                        <li><a href="/footer">Terms and conditions</a></li>
-                        <li><a href="/footer">Privacy policy</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/about">Contact us</a></li>
+                        <li><a href="/">Terms and conditions</a></li>
+                        <li><a href="/">Privacy policy</a></li>
                     </ul>
                 </div>
                 <div className='footer-card'>
@@ -56,10 +56,10 @@ function Footer() {
                     <a href="#" className="me-4 text-reset">
                         <i className="fab fa-twitter "></i>
                     </a>
-                    <a href="#" className="me-4 text-reset">
+                    <a href="https://www.linkedin.com/in/abhishekpandeyuiet" className="me-4 text-reset">
                         <i className="fab fa-linkedin"></i>
                     </a>
-                    <a href="#" className="me-4 text-reset">
+                    <a href="https://www.instagram.com/abhishek_pandey1130/?next=%2F" className="me-4 text-reset">
                         <i className="fab fa-instagram"></i>
                     </a>
                 </div>

@@ -19,7 +19,6 @@ export default function Carousel() {
 
   return (
     <div id="main" className="main-div" data-bs-ride="carousel">
-      <NavBar />
       <div id="carouselExampleCaptions" className="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
         <div className="carousel-indicators"></div>
         <div className="carousel-inner">

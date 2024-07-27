@@ -28,16 +28,16 @@ const UserDropdown = ({ logout }) => {
           <span className="username">{user.name}</span>
           <Link to='/myprofile' className="dropdown-item">
           <FontAwesomeIcon icon={faUserTag}/> My Profile</Link>
-          <Link to="/subscription" className="dropdown-item">
+          <Link to="/mycredit" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faCrown}/>Subscription</Link>
           <Link to="/my-appointment" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faCalendarCheck}/> My Appointments</Link>
-          <Link to="/subscription" className="dropdown-item">
+          <Link to="/consult" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faNotesMedical}/>
-           Medical Records</Link>
-          <Link to="/subscription" className="dropdown-item">
+           Book Appointment</Link>
+          <Link to="/prescription" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faPrescription}/> Prescriptions</Link>
-          <Link to="/subscription" className="dropdown-item">
+          <Link to="/payment/history" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faMoneyBill} /> Payment History</Link>
           <Link to="/subscription" className="dropdown-item">
           <FontAwesomeIcon className="icon" icon={faHandshakeAngle}/>Support</Link>

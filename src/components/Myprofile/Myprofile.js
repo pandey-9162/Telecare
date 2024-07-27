@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthContext";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import "./style.css";
 function Myprofile() {
     const { user } = useContext(AuthContext);
@@ -10,7 +8,6 @@ function Myprofile() {
     }
     return (
         <>
-            <Header />
             <div className="container emp-profile">
                 <form method="post">
                     <div className="row">
@@ -76,7 +73,6 @@ function Myprofile() {
                     </div>
                     <div className="row">
                         <div className="col-md-4">
-                            {/* Additional Profile Work can be added here */}
                         </div>
                         <div className="col-md-8">
                             <div className="tab-content profile-tab" id="myTabContent">
@@ -91,15 +87,7 @@ function Myprofile() {
                                             <label>User Id</label>
                                         </div>
                                         <div className="col-md-6">
-                                            <p>{user._id}</p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label>Credit</label>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <p>{user.credits}</p>
+                                            <p>{user.email}</p>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -194,8 +182,6 @@ function Myprofile() {
                     </div>
                 </form>
             </div>
-
-            <Footer />
         </>
     );
 }

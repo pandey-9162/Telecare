@@ -3,6 +3,7 @@
     top: 0;
     z-index: 1000; 
 }
+
 .right-item{
     display:flex;
     justify-content: space-between;
@@ -65,6 +66,9 @@ body {
 
 .nav-link:hover {
     color: #90EE93;
+}
+.nav-link.active {
+    color: #c0ebda; 
 }
 .dropdown-menu {
     position: absolute;

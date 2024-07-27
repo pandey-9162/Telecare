@@ -80,12 +80,8 @@ const Middle = () => {
       <div class="text-center">
         <p class="fs-1">A high-quality care experience—anywhere, Anytime.</p>
         <p class="fs-4">It started with a simple yet revolutionary idea. That everyone should have access to the best healthcare anywhere in the world on their terms. That includes you.</p>
-<<<<<<< HEAD
         <a href='/about'><button type="button" class="btn btn-outline-success">About us</button>
         </a>
-=======
-        <button type="button" class="btn btn-outline-success">About us</button>
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
       </div>
     </div>
   );

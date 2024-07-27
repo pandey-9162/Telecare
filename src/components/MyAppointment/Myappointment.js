@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import './style.css'; // Add some basic styling
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import './style.css';
+
 import { AuthContext } from '../../AuthContext';
-<<<<<<< HEAD
-const base_url = "https://meetmydoc-backend-3.onrender.com" ;//"https://meetmydoc-backend-2.onrender.com";
-=======
 const base_url = "http://localhost:5000" ;//"https://meetmydoc-backend-2.onrender.com";
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
 
 const MyAppointment = () => {
   const { user } = useContext(AuthContext);
@@ -19,7 +14,15 @@ const MyAppointment = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await fetch(`${base_url}/api/appointments?userId=${user._id}`);
+    const encodedCredentials = btoa(`${user.email}:${user.password}`);
+
+    const response = await fetch(`${base_url}/api/appointments?userId=${user._id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Basic ${encodedCredentials}`,
+        'Content-Type': 'application/json',
+      },
+    });
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -46,7 +49,6 @@ const MyAppointment = () => {
 
   return (
     <>
-      <Header />
       <div className="my-appointments">
         <h1>My Appointment</h1>
         <div className="appointment-section">
@@ -78,7 +80,6 @@ const MyAppointment = () => {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 };

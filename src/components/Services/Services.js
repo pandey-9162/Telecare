@@ -1,5 +1,69 @@
 import React from 'react';
 import './style.css';
+import OfferCard from '../About/OfferCard';
+import schedule from "../../assets/scheduling.jpeg"
+import second from "../../assets/21.jpeg"
+import homedeliver from "../../assets/homedeliver.jpg"
+import consfidantial from "../../assets/confidential.jpeg"
+import record from "../../assets/record.jpeg"
+import first from "../../assets/first.jpeg"
+import third from "../../assets/third.jpeg"
+import reminder from "../../assets/reminder.png"
+import ambulance from "../../assets/ambulance.jpeg"
+
+
+const offers = [
+    {
+        image: first,
+        title: 'Personalized Health Management',
+        content: 'Tailored healthcare experience with customized scheduling and health tracking.',
+    },
+    {
+        image: second,
+        title: 'Convenient Access to Experts',
+        content: 'Connect with top doctors and specialists easily.',
+    },
+    {
+        image: third,
+        title: 'Streamlined Communication',
+        content: 'Seamless interaction with your healthcare team from home.',
+    },
+    {
+        image: record,
+        title: 'Health Records at Your Fingertips',
+        content: 'Secure, digital access to your medical history and test results.',
+    },
+    {
+        image: schedule,
+        title: 'Comprehensive Health Insights',
+        content: 'Integrates with health tracking devices for a holistic view.',
+    },
+    {
+        image: reminder,
+        title: 'Easy Scheduling and Reminders',
+        content: 'Book, reschedule, or cancel appointments effortlessly with automated reminders.',
+    },
+    {
+        image: consfidantial,
+        title: 'Secure and Confidential',
+        content: 'Advanced security measures to protect your personal health information.',
+    },
+    {
+        image: homedeliver,
+        title: 'Medicine Delivery',
+        content: (
+            <ul>
+                <li><strong>Metropolitan Cities:</strong> Medicine delivered to your doorstep within 2 hours.</li>
+                <li><strong>Smaller Cities:</strong> Medicine delivered within 24 hours.</li>
+            </ul>
+        ),
+    },
+    {
+        image: ambulance,
+        title: 'Emergency Services',
+        content: 'Immediate transportation to the nearest healthcare facility in critical situations.',
+    },
+];
 
 const OurServices = () => {
   return (
@@ -11,29 +75,16 @@ const OurServices = () => {
             </header>
             <section className="meetmydoc-content">
                 <h2>What We Offer:</h2>
-                <ul>
-                    <li>
-                        <strong>Personalized Health Management:</strong> Tailored healthcare experience with customized scheduling and health tracking.
-                    </li>
-                    <li>
-                        <strong>Convenient Access to Experts:</strong> Connect with top doctors and specialists easily.
-                    </li>
-                    <li>
-                        <strong>Streamlined Communication:</strong> Seamless interaction with your healthcare team from home.
-                    </li>
-                    <li>
-                        <strong>Health Records at Your Fingertips:</strong> Secure, digital access to your medical history and test results.
-                    </li>
-                    <li>
-                        <strong>Comprehensive Health Insights:</strong> Integrates with health tracking devices for a holistic view.
-                    </li>
-                    <li>
-                        <strong>Easy Scheduling and Reminders:</strong> Book, reschedule, or cancel appointments effortlessly with automated reminders.
-                    </li>
-                    <li>
-                        <strong>Secure and Confidential:</strong> Advanced security measures to protect your personal health information.
-                    </li>
-                </ul>
+                <div className="offer-cards-container">
+                {offers.map((offer, index) => (
+                    <OfferCard
+                        key={index}
+                        image={offer.image}
+                        title={offer.title}
+                        content={offer.content}
+                    />
+                ))}
+            </div>
                 <h2>Why Choose MeetMyDoc?</h2>
                 <ul>
                     <li>User-Friendly Design: Accessible for everyone, regardless of tech-savviness.</li>

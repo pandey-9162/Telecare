@@ -17,16 +17,15 @@ import Credit from './components/Credit/Credit';
 import Individual from './components/Services/Individual';
 import Organisation from './components/Services/Organisation';
 import Footer from './components/Footer/Footer';
-<<<<<<< HEAD
+import PaymentHistory from './components/PaymentHistory/PaymentHistory';
 import Service from './components/Services/Services';
-import PaymentValidation from './PaymentValidation'; // This is the component to handle the validation
-=======
-// import Chat from './components/Chat/Chat';
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
-
+import PaymentValidation from './PaymentValidation'; 
+import NavBar from './components/NavBar/Navbar';
+import Prescription from './components/Prescription/Prescription';
 function App() {
   return (
-  
+    <>
+    <NavBar />
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route exact path='/createuser' element={<Signup/>}/>
@@ -41,15 +40,13 @@ function App() {
       <Route exact path='/more-about-meetmydoc' element={<Individual/>}/>
       <Route exact path='/service/organization' element={<Organisation/>}/>
       <Route exact path='/footer' element={<Footer/>}/>
-<<<<<<< HEAD
       <Route exact path='/service' element={<Service/>}/>
+      <Route exact path='/payment/history' element={<PaymentHistory/>}/>
       <Route path="/payment/validate/:merchantTransactionId" element={<PaymentValidation />} />
-=======
-      {/* <Route exact path='/chat' element={<Chat/>}/> */}
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
-
+      <Route exact path='/prescription' element={<Prescription/>}/>
     </Routes>
-
+    <Footer />
+    </>
   );
 }
 

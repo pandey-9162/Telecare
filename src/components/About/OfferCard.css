@@ -1,0 +1,37 @@
+.offer-card {
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures content doesn’t overflow out of the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 300px; /* Maximum width of the card */
+    margin: 16px; /* Margin around the card */
+    background-color: #fff; /* White background */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+}
+
+.offer-card:hover {
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.offer-card-image {
+    width: 100%; /* Full width of the card */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.offer-card-content {
+    padding: 16px; /* Padding inside the card */
+}
+
+.offer-card-title {
+    font-size: 1.5em; /* Larger title text */
+    margin: 0; /* Remove default margin */
+    color: #333; /* Dark text color */
+}
+
+.offer-card-text {
+    font-size: 1em; /* Standard text size */
+    color: #666; /* Slightly lighter text color */
+    margin-top: 8px; /* Space between title and content */
+}

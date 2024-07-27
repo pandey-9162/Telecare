@@ -1,44 +1,44 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../AuthContext';
-import Header from "../NavBar/Navbar";
-import Footer from "../Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
-<<<<<<< HEAD
 
 const base_url = 'http://localhost:5000';
-=======
-import { useNavigate } from 'react-router-dom';
-const base_url = 'http://localhost:5000'; //"https://meetmydoc-backend-2.onrender.com";
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
 
 const Recharge = () => {
   const { user } = useContext(AuthContext);
-  const [credits, setCredits] = useState(user ? user.credits : 0);
+  const [credits, setCredits] = useState(0);
   const [amount, setAmount] = useState(0);
-
-  const showToastMessage = () => {
-    toast.success("Recharge Success!", {
-      position: 'top-right',
-    });
-  };
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const showToastMessage = () => {
+  };
+
   useEffect(() => {
     const fetchCredit = async () => {
-      if (!user._id) {
+      if (!user || !user._id) {
         setLoading(false);
         return;
       }
       try {
-        const response = await axios.get(`${base_url}/api/point?userId=${user._id}`);
-        setCredits(response.data.credit);
+        const response = await axios.get(`${base_url}/api/point`, {
+          params: { userId: user._id },
+          headers: {
+            'Authorization': `Basic ${btoa(`${user.email}:${user.password}`)}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        if (response.data && response.data.credit !== undefined) {
+          setCredits(response.data.credit);
+        } else {
+          // console.error('Invalid credits response:', response);
+          setError('Invalid credits response');
+        }
       } catch (error) {
-        console.error('Error fetching credits:', error);
+        // console.error('Error fetching credits:', error);
         setError(error.message || 'Error fetching credits');
       } finally {
         setLoading(false);
@@ -58,17 +58,11 @@ const Recharge = () => {
 
   const handleRecharge = async () => {
     try {
+      const { email, password } = user;
 
-      const { email, password, _id } = user;
-      
       const response = await axios.post(
-<<<<<<< HEAD
         `${base_url}/payment/pay`,
-        { userId: _id, amount },
-=======
-        `${base_url}/api/recharge`,
         { userId: user._id, amount },
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
         {
           headers: {
             'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
@@ -76,10 +70,15 @@ const Recharge = () => {
           },
         }
       );
-  
+
       if (response.data.redirectUrl) {
         window.location.href = response.data.redirectUrl;
-        // showToastMessage();
+        showToastMessage();
+      } else {
+        // console.error('Invalid response format:', response);
+        toast.error('Error: Invalid response format', {
+          position: 'top-right',
+        });
       }
     } catch (error) {
       console.error('Error recharging account:', error.message || error);
@@ -88,11 +87,9 @@ const Recharge = () => {
       });
     }
   };
-  
 
   return (
     <>
-      <Header />
       <div className='main-credit-card'>
         <div className='credit-card'>
           <div className='heading'>
@@ -135,7 +132,6 @@ const Recharge = () => {
           <p><strong>Example:</strong> If you recharge with 500 INR, you will receive 5 credits, allowing you to schedule 5 consultations.</p>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

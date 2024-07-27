@@ -1,57 +1,86 @@
-
+/* Base Styles */
 .doctor-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-item:center;
-  width: 90%;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
   background-color: #fff;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 100%;
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-card-header {
+  display: flex;
+  align-items: center;
 }
 
 .doctor-photo {
-  flex: 1;
-  max-width: 100px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-right: 16px;
 }
 
-.doctor-photo img {
-  border-radius: 50%;
-  width: 100%;
+.doctor-name {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .doctor-details {
-  flex: 2;
-}
-
-.doctor-details h5 {
-  margin: 0 0 8px 0;
-  font-size: 1.2em;
-}
-
-.doctor-details p {
-  margin: 4px 0;
+  margin: 16px 0;
 }
 
 .doctor-slots {
-  margin: auto;
-  max-width: 500px;
+  margin-top: 16px;
+}
+
+.slots-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .slot-button {
   background-color: #007bff;
-  color: #fff;
   border: none;
+  color: white;
+  padding: 8px 16px;
+  margin: 4px;
   border-radius: 4px;
-  padding: 8px;
-  margin: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .slot-button:hover {
   background-color: #0056b3;
+}
+
+.slot-button.booked {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.slot-button:disabled {
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .doctor-card {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .doctor-photo {
+      width: 100px;
+      height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-name {
+      font-size: 1.25rem;
+  }
 }

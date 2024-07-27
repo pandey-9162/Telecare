@@ -72,7 +72,6 @@ const Organizations = () => {
 
   return (
     <>
-      <Header />
       <div className="faq-container">
         <h2>More About MeetMyDoc</h2>
         <p>MeetMydoc provides tailored telemedicine solutions to organizations, helping them maintain the health and well-being of their workforce. Our services encompass corporate wellness programs, occupational health services, and remote employee healthcare, all designed to support a productive and healthy work environment.
@@ -151,7 +150,6 @@ const Organizations = () => {
           </div>
         </div>
       )}
-      <Footer />
       <ToastContainer />
     </>
   );

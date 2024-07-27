@@ -1,29 +1,15 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import "./style.css"; 
 import { AuthContext } from "../../AuthContext";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const base_url = 'http://localhost:5000';
 
 const Register = () => {
   const { login } = useContext(AuthContext); 
   const navigate = useNavigate();
-=======
-import React, { useState , useEffect, useContext } from "react";
-import { Link,useNavigate } from 'react-router-dom';
-import "./style.css"; 
-const base_url = "http://localhost:5000"; // "https://meetmydoc-backend-2.onrender.com"
-import { AuthContext } from "../../AuthContext";
-import { ToastContainer } from "react-toastify";
-
-
-const Register = () => {
-  const { login } = useContext(AuthContext); 
-
-  const navigate = useNavigate() ;
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
-  const [formData, setFormData] = useState({
+ const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
@@ -56,7 +42,7 @@ const Register = () => {
   
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form data:', formData);
+    // console.log('Submitting form data:', formData);
     try {
       const response = await fetch(`${base_url}/api/register`, {
         method: 'POST',
@@ -66,19 +52,14 @@ const Register = () => {
         body: JSON.stringify(formData)
       });
       const data = await response.json();
-      console.log('Server response:', data);
+      // console.log('Server response:', data);
       if (response.ok) {
-        console.log('User registered successfully:', data);
-<<<<<<< HEAD
-        alert("User registered successfully!");
-=======
+        // console.log('User registered successfully:', data);
         showToastMessage();
-        // alert("User registered successfully!");
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
         login(data);
-        navigate('/');
+        setTimeout(() => navigate('/'), 2000);
       } else {
-        console.error('Registration error:', data);
+        // console.error('Registration error:', data);
         alert('Registration failed. Please try again.');
       }
     } catch (err) {
@@ -88,13 +69,9 @@ const Register = () => {
   };
 
   return (
-<<<<<<< HEAD
     <>
-=======
-    <>.
       <ToastContainer/>
       {/* <Header /> Your header component */}
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
       <div className="register-container">
         <div id="welcome-heading" style={{ opacity: 1 }}>{welcomeMessage}</div>
         <div className="register-content">

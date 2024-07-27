@@ -43,7 +43,6 @@
   overflow: hidden;
 }
 
-/* Carousel styling */
 .carousel-item {
   position: relative;
   width: 100%;
@@ -57,15 +56,14 @@
 }
 .carousel-heading{
   position: relative;
-  /* color:green; */
 }
 .carousel-heading {
   font-size: 10vw; /* make our h1 tag larger */
-  font-family: sans-serif; /* choosing our font */
-  background: linear-gradient(to right, rgba(255, 215, 255, 0.2) 0%, rgba(225, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.1) 61%), linear-gradient(rgb(92, 18, 217) 52%, rgb(224, 246, 255) 60%, #2f4a99 61%); /* you can change the colors based on your preference */
-  background-clip: text; /*it defines how far the background should extend within an element, here we set it to text */
-  -webkit-background-clip: text; /*for browsers compatibility */
-  -webkit-text-fill-color: transparent; /* specifies the fill color of text characters. We use transparent to use the background as our text fill  */
+  font-family: sans-serif; 
+  background: linear-gradient(to right, rgba(255, 215, 255, 0.2) 0%, rgba(225, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.1) 61%), linear-gradient(rgb(92, 18, 217) 52%, rgb(224, 246, 255) 60%, rgba(13, 59, 214, 0.8) 61%); 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
   animation: wave 2000ms ease alternate infinite;
   transition: all 0.4s ease;
 }

@@ -31,7 +31,7 @@ const Login = () => {
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const showToastMessage = () => {
-    toast.success("Registation Successfull!", {
+    toast.success("Login Successfull!", {
       position: 'top-right',
     });
   };
@@ -49,18 +49,17 @@ const Login = () => {
       const data = await response.json();
       if(!data) console.log("no data");
       if (response.ok) {
-        console.log('User logged in successfully');
+        // console.log('User logged in successfully');
         login(data);
         showToastMessage();
-        // alert("You logged in successfully") 
-        navigate('/');
+        setTimeout(() => navigate('/'), 2000);
       } else {
-        // Handle error (e.g., show error message)
-        console.error('Login error:', data);
-        alert("Enter correct credentials")
+        // console.error('Login error:', data);
+        toast.error('Enter correct credentials');
       }
     } catch (err) {
-      console.error("Error:", err);
+      // console.error("Error:", err);
+      toast.error('Login failed. Please try again.');
     }
   };
 

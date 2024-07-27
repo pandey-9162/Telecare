@@ -1,18 +1,16 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+
+import { Link, useLocation, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
 import { AuthContext } from '../../AuthContext';
 import UserDropdown from '../UserDropdown/UserDropdown';
-
-
 
 function NavBar() {
     const { user, logout } = useContext(AuthContext);
     const [isHome, setIsHome] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
-    const [dropdown, setDropdown] = useState(false);
 
     useEffect(() => {
         setIsHome(location.pathname === '/');
@@ -28,38 +26,19 @@ function NavBar() {
             <Link to="/"><h2 id="logo">MeetMyDoc</h2></Link>   
             </div>
             <div className={`navbar-center ${isMenuOpen ? 'mobile-menu' : ''}`}>
-        <Link to="/" className="nav-link" aria-current="page">Home</Link>
-<<<<<<< HEAD
-        <Link to="/service" className="nav-link" aria-current="page">Services</Link>
-=======
-        <div 
-          className="nav-link" 
-          onMouseEnter={() => setDropdown(true)}
-          onMouseLeave={() => setDropdown(false)}
-          // onClick={() => setDropdown(!dropdown)}
+        <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} aria-current="page">Home</NavLink>
+        <NavLink to="/service" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Services</NavLink>
+        <NavLink 
+            to="/about" 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
         >
-          Our Services
-          {dropdown && (
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/services/individual" className="dropdown-link">Individual Services</Link>
-              </li>
-              <li>
-                <Link to="/services/clinical" className="dropdown-link">Clinical Services</Link>
-              </li>
-              <li>
-                <Link to="/services/organization" className="dropdown-link">Organizational Services</Link>
-              </li>
-            </ul>
-          )}
-        </div>
->>>>>>> 662f45eec6fadad3460acc935d5167bf34093408
-        <Link to="/footer" className="nav-link">Contact us</Link>
+        About
+        </NavLink>
       </div>
             <div className="navbar-right">
                 {user ? (
                         <div className='right-item'>
-                            <Link to='/mycredit'><div className='credit-'>Credit {user.credits}</div></Link>
+                            <Link to='/mycredit'><div className='credit-'>Credit</div></Link>
                             <UserDropdown logout={logout} />
                         </div>
                     

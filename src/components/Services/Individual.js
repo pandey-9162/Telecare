@@ -32,7 +32,6 @@ const Individual = () => {
 
   return (
     <>
-    <Header/>
     <div className="faq-container">
       <h2>More About MeetMyDoc</h2>
       <p>MeetMydoc provides a comprehensive range of services tailored to meet the healthcare needs of individuals. By leveraging advanced telemedicine technology, MeetMydoc allows individuals to connect with healthcare professionals from the comfort and privacy of their homes. This ensures timely medical consultations without the hassle of travel or long waiting times.
@@ -51,7 +50,6 @@ Overall, MeetMydoc enhances individual healthcare by providing an easy-to-use pl
         </div>
       ))}
     </div>
-    <Footer/>
     </>
   );
 };

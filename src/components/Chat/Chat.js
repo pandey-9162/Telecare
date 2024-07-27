@@ -12,7 +12,7 @@ function Chat() {
   async function generateAnswer(e) {
     setGeneratingAnswer(true);
     e.preventDefault();
-    setAnswer("Loading your answer... \n It might take up to 10 seconds");
+    setAnswer("Hang tight! We're brewing up your answer. It’ll be ready in just a moment");
     try {
       const response = await axios({
         url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.REACT_APP_API_KEY}`,
@@ -24,7 +24,7 @@ function Chat() {
 
       setAnswer(response.data.candidates[0].content.parts[0].text);
     } catch (error) {
-      console.error("Error generating answer:", error);
+      // console.error("Error generating answer:", error);
       setAnswer("Failed to load the answer. Please try again later.");
     } finally {
       setGeneratingAnswer(false);
